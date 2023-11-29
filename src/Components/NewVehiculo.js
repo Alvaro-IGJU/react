@@ -34,7 +34,7 @@ export function NewVehiculo() {
 
     return (
         <div>
-            <div>
+            <div class="container">
                 <h3>New Vehículo</h3><br />
                 <select placeholder="Modelo" id="vehicleModel">
                     {vehiculosDisponibles.map((modelo, index) => (
@@ -46,15 +46,16 @@ export function NewVehiculo() {
                     <option>Mediana</option>
                     <option>Dura</option>
                 </select><br />
-                <input type="number" placeholder="Min Vel" id="vehicleMinVel" /><br />
-                <input type="number" placeholder="Max Vel" id="vehicleMaxVel" /><br />
+                <input type="number" placeholder="Min Vel" min="1"  id="vehicleMinVel" /><br />
+                <input type="number" placeholder="Max Vel" min="2"  id="vehicleMaxVel" /><br />
                 <select placeholder="Tipo Vehículo" id="vehicleType">
                     <option>Coche</option>
                     <option>Motocicleta</option>
                 </select><br />
                 <button onClick={addVehiculo}>Nuevo Vehículo</button><br />
-                <button>Cargar Estadísticas</button><br />
+                
             </div>
+            <hr class="separator"></hr>
             <GestionParticipantes newVehicle={vehiculo} />
         </div>
     );

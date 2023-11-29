@@ -11,8 +11,30 @@ export function GestionParticipantes({ newVehicle }) {
         "Princesa Peach",
         "Yoshi",
         "Toad",
-        "Bowser"
-    ]);
+        "Bowser",
+        "Donkey Kong",
+        "Daisy",
+        "Wario",
+        "Waluigi",
+        "Toadette",
+        "Bowser Jr.",
+        "Rosalina",
+        "Metal Mario",
+        "Lakitu",
+        "Shy Guy",
+        "Baby Mario",
+        "Baby Luigi",
+        "Baby Peach",
+        "Baby Daisy",
+        "Baby Rosalina",
+        "Koopa Troopa",
+        "Dry Bones",
+        "King Boo",
+        "Diddy Kong",
+        "Birdo",
+        "Mii"
+    
+      ]);
 
     useEffect(() => {
         if (newVehicle !== '') {
@@ -29,11 +51,6 @@ export function GestionParticipantes({ newVehicle }) {
             }
         });
 
-        // Crear un nuevo array excluyendo el personaje seleccionado
-        // const updatedParticipantesDisponibles = participantesDisponibles.filter(
-        //     (participante) => participante !== name
-        // );
-        // setParticipantesDisponibles(updatedParticipantesDisponibles);
 
         setParticipante(new Participante(name, vehicle));
     }
@@ -41,7 +58,7 @@ export function GestionParticipantes({ newVehicle }) {
     return (
         <div>
             {vehicleOptions.length > 0 && (
-                <div>
+                <div class="container">
                     <h3>Gestión de Participantes</h3>
                     <br />
                     <select placeholder="Nombre" id="participanteName">
@@ -56,12 +73,12 @@ export function GestionParticipantes({ newVehicle }) {
                         ))}
                     </select>
                     <br />
-                    <input type="text" placeholder="Estadísticas" id="participantEstadisticas" />
-                    <br />
                     <button onClick={addParticipante}>Guardar Participante</button>
                     <br />
-                    <button>Cargar Estadísticas</button>
+                    
                     <br />
+                    <hr class="separator"></hr>
+                            
                     <NewCircuito newParticipante={participante}></NewCircuito>
                 </div>
             )}
